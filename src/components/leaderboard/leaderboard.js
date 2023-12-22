@@ -24,7 +24,7 @@ const Leaderboard = () => {
 	return (
 		<>
 			<div>
-				<h1>User Leaderboard</h1>
+				<h1 className='user-leaderboard-header'>User Leaderboard</h1>
 				<TableContainer
 					data={leaderboardData.users.map((user) => ({
 						rank: user.rank,
@@ -32,14 +32,16 @@ const Leaderboard = () => {
 						totalScore: user.totalScore,
 					}))}
 					headers={['Rank', 'Name', 'Total Score']}
+					className='user-leaderboard'
 				/>
 			</div>
 			{leaderboardData.users.map((user) => (
 				<div key={user.id}>
-					<h2>{user.name}'s Teams</h2>
+					<h2 className='user-teams-header'>{user.name}'s Teams</h2>
 					<TableContainer
 						data={user.matchedTeams}
 						headers={['Name', 'Wins', 'Losses']}
+						className='user-teams'
 					/>
 				</div>
 			))}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Leaderboard from './leaderboard/Leaderboard';
+import Leaderboard from './leaderboard/leaderboard';
 
 function HomePage() {
 	return <Leaderboard />;

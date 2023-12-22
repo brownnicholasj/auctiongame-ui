@@ -1,9 +1,9 @@
 import React from 'react';
 import { spaceToCamelCase } from '../../helpers/toCamelCase';
 
-const TableRow = ({ item, headers }) => {
+const TableRow = ({ item, headers, className }) => {
 	return (
-		<tr>
+		<tr className={className + '-table-row'}>
 			{headers.map((header) => {
 				const key = spaceToCamelCase(header);
 				return <td key={key}>{item[key]}</td>;
