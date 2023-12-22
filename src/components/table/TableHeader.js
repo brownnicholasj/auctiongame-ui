@@ -1,8 +1,8 @@
 import React from 'react';
 
-const TableHeader = ({ headers }) => {
+const TableHeader = ({ headers, className }) => {
 	return (
-		<thead>
+		<thead className={className + '-table-header'}>
 			<tr>
 				{headers.map((header, index) => (
 					<th key={index}>{header}</th>

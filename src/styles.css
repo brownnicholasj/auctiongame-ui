@@ -1,0 +1,64 @@
+/* User Leaderboard Header */
+.user-leaderboard-header {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* User Teams Header */
+.user-teams-header {
+    font-size: 20px;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* General Styles for User Leaderboard Table */
+.user-leaderboard-table-container {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.user-leaderboard-table-container th,
+.user-leaderboard-table-container td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-leaderboard-table-header th {
+    background-color: #007bff;
+    color: white;
+}
+
+.user-leaderboard-table-body .user-leaderboard-table-row:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+/* General Styles for User Teams Table */
+.user-teams-table-container {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.user-teams-table-container th,
+.user-teams-table-container td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-teams-table-header th {
+    background-color: #0056b3;
+    color: white;
+}
+
+.user-teams-table-body .user-teams-table-row:nth-child(even) {
+    background-color: #e6f0ff;
+}
