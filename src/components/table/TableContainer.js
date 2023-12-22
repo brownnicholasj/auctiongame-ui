@@ -6,7 +6,7 @@ const TableContainer = ({ data, headers }) => {
 	return (
 		<table>
 			<TableHeader headers={headers} />
-			<TableBody data={data.users} headers={headers} />
+			<TableBody data={data} headers={headers} />
 		</table>
 	);
 };
