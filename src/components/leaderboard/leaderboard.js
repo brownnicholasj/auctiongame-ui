@@ -5,8 +5,6 @@ import TableContainer from '../table/TableContainer';
 const Leaderboard = () => {
 	const [leaderboardData, setLeaderboardData] = useState({ users: [] });
 
-	const userHeaders = ['Rank', 'Name', 'Total Score'];
-
 	useEffect(() => {
 		const fetchLeaderboardData = async () => {
 			try {
@@ -24,10 +22,28 @@ const Leaderboard = () => {
 		fetchLeaderboardData();
 	}, []);
 	return (
-		<div>
-			<h1>User Leaderboard</h1>
-			<TableContainer data={leaderboardData} headers={userHeaders} />
-		</div>
+		<>
+			<div>
+				<h1>User Leaderboard</h1>
+				<TableContainer
+					data={leaderboardData.users.map((user) => ({
+						rank: user.rank,
+						name: user.name,
+						totalScore: user.totalScore,
+					}))}
+					headers={['Rank', 'Name', 'Total Score']}
+				/>
+			</div>
+			{leaderboardData.users.map((user) => (
+				<div key={user.id}>
+					<h2>{user.name}'s Teams</h2>
+					<TableContainer
+						data={user.matchedTeams}
+						headers={['Name', 'Wins', 'Losses']}
+					/>
+				</div>
+			))}
+		</>
 	);
 };
 
