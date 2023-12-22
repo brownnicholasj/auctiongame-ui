@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { API_URL } from '../../constants';
+import TableContainer from '../table/TableContainer';
 
 const Leaderboard = () => {
 	const [leaderboardData, setLeaderboardData] = useState({ users: [] });
+
+	const userHeaders = ['Rank', 'Name', 'Total Score'];
 
 	useEffect(() => {
 		const fetchLeaderboardData = async () => {
@@ -20,28 +23,10 @@ const Leaderboard = () => {
 
 		fetchLeaderboardData();
 	}, []);
-
 	return (
 		<div>
 			<h1>User Leaderboard</h1>
-			<table>
-				<thead>
-					<tr>
-						<th>Rank</th>
-						<th>User</th>
-						<th>Total Score</th>
-					</tr>
-				</thead>
-				<tbody>
-					{leaderboardData.users.map((user, index) => (
-						<tr key={user.id}>
-							<td>{user.rank}</td>
-							<td>{user.name}</td>
-							<td>{user.totalScore}</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
+			<TableContainer data={leaderboardData} headers={userHeaders} />
 		</div>
 	);
 };
