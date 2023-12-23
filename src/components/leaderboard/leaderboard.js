@@ -4,6 +4,14 @@ import TableContainer from '../table/TableContainer';
 
 const Leaderboard = () => {
 	const [leaderboardData, setLeaderboardData] = useState({ users: [] });
+	const [visibleTeams, setVisibleTeams] = useState({});
+
+	const toggleTeamsVisibility = (userId) => {
+		setVisibleTeams((prevState) => ({
+			...prevState,
+			[userId]: !prevState[userId],
+		}));
+	};
 
 	useEffect(() => {
 		const fetchLeaderboardData = async () => {
@@ -30,12 +38,14 @@ const Leaderboard = () => {
 						rank: user.rank,
 						name: user.name,
 						totalScore: user.totalScore,
+						onClick: () => toggleTeamsVisibility(user.id),
+						isTeamsVisible: visibleTeams[user.id] || false,
 					}))}
 					headers={['Rank', 'Name', 'Total Score']}
 					className='user-leaderboard'
 				/>
 			</div>
-			{leaderboardData.users.map((user) => (
+			{/* {leaderboardData.users.map((user) => (
 				<div key={user.id}>
 					<h2 className='user-teams-header'>{user.name}'s Teams</h2>
 					<TableContainer
@@ -50,7 +60,7 @@ const Leaderboard = () => {
 						className='user-teams'
 					/>
 				</div>
-			))}
+			))} */}
 		</>
 	);
 };
