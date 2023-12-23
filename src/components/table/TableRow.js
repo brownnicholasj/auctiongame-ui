@@ -1,5 +1,6 @@
 import React from 'react';
 import { spaceToCamelCase } from '../../helpers/toCamelCase';
+import UserTeamsTable from '../leaderboard/UserTeamsTable';
 
 const getDisplayValue = (value) => {
 	if (typeof value === 'boolean') {
@@ -11,7 +12,7 @@ const getDisplayValue = (value) => {
 const TableRow = ({ item, headers, className }) => {
 	return (
 		<>
-			<tr className={className + '-table-row'}>
+			<tr className={className + '-table-row'} onClick={item.onClick}>
 				{headers.map((header) => {
 					const key = spaceToCamelCase(header);
 					const displayValue = getDisplayValue(item[key]);
@@ -23,7 +24,10 @@ const TableRow = ({ item, headers, className }) => {
 				<tr>
 					<td colSpan={headers.length}>
 						{/* Assuming you have a component to render user's teams */}
-						<UserTeamsTable userId={item.id} />
+						<UserTeamsTable
+							userName={item.name}
+							matchedTeams={item.matchedTeams}
+						/>
 					</td>
 				</tr>
 			)}

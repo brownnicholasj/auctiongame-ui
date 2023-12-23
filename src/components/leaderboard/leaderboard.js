@@ -38,6 +38,7 @@ const Leaderboard = () => {
 						rank: user.rank,
 						name: user.name,
 						totalScore: user.totalScore,
+						matchedTeams: user.matchedTeams,
 						onClick: () => toggleTeamsVisibility(user.id),
 						isTeamsVisible: visibleTeams[user.id] || false,
 					}))}
