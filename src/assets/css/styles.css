@@ -1,8 +1,19 @@
+:root{
+    --background: rgb(221, 230, 237);
+    --headerBackground: rgb(39, 55, 77);
+    --altRowColor: rgb(157, 178, 191);
+    --rowHover: rgb(169, 169, 169);
+}
+
+body {
+    background-color: var(--background);
+}
+
 /* User Leaderboard Header */
 .user-leaderboard-header {
     font-size: 24px;
     color: white; /* Changed to white for better contrast */
-    background-color: #007bff; /* Added background color */
+    background-color: var(--headerBackground); /* Added background color */
     margin-bottom: 20px;
     padding: 10px 0; /* Added padding for spacing */
     text-align: center;
@@ -12,7 +23,7 @@
 .user-teams-header {
     font-size: 20px;
     color: white; /* Changed to white for better contrast */
-    background-color: #0056b3; /* Added background color */
+    background-color: var(--headerBackground); /* Added background color */
     margin-top: 30px;
     margin-bottom: 15px;
     padding: 10px 0; /* Added padding for spacing */
@@ -20,8 +31,15 @@
 }
 
 /* General Styles for User Leaderboard Table */
+.user-leaderboard-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Aligns vertically for column direction */
+    width: 60%;
+    margin: auto; /* This is for horizontal centering if you remove align-items */
+}
+
 .user-leaderboard-table-container {
-    width: 100%;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -35,19 +53,23 @@
 }
 
 .user-leaderboard-table-header th {
-    background-color: #007bff; /* Consistent with the header */
+    background-color: var(--headerBackground); /* Consistent with the header */
     color: white;
 }
 
 .user-leaderboard-table-body .user-leaderboard-table-row:nth-child(even) {
-    background-color: #f0f0f0;
+    background-color: var(--altRowColor);
 }
 
 .user-leaderboard-table-body .user-leaderboard-table-row:hover {
-    background-color: #dae5f4; /* Hover effect for rows */
+    background-color: var(--rowHover); /* Hover effect for rows */
 }
 
 /* General Styles for User Teams Table */
+.user-teams-container {
+    display: inline-flex;
+}
+
 .user-teams-table-container {
     width: 100%;
     border-collapse: collapse;
@@ -64,16 +86,16 @@
 }
 
 .user-teams-table-header th {
-    background-color: #0056b3; /* Consistent with the header */
+    background-color: var(--headerBackground); /* Consistent with the header */
     color: white;
 }
 
 .user-teams-table-body .user-teams-table-row:nth-child(even) {
-    background-color: #e6f0ff;
+    background-color: var(--altRowColor);
 }
 
 .user-teams-table-body .user-teams-table-row:hover {
-    background-color: #dae5f4; /* Hover effect for rows */
+    background-color: var(--rowHover); /* Hover effect for rows */
 }
 
 /* Style for Playoff Birth Indicator */

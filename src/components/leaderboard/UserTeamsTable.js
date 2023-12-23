@@ -4,8 +4,8 @@ import TableContainer from '../table/TableContainer';
 const UserTeamsTable = ({ userName, matchedTeams }) => {
 	return (
 		<>
-			<div key={userName}>
-				<h2 className='user-teams-header'>{userName}'s Teams</h2>
+			<div key={userName} className='user-teams-container'>
+				{/* <h2 className='user-teams-header'>{userName}'s Teams</h2> */}
 				<TableContainer
 					data={matchedTeams}
 					headers={[

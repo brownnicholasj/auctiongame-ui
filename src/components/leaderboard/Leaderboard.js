@@ -31,7 +31,7 @@ const Leaderboard = () => {
 	}, []);
 	return (
 		<>
-			<div>
+			<div className='user-leaderboard-container'>
 				<h1 className='user-leaderboard-header'>User Leaderboard</h1>
 				<TableContainer
 					data={leaderboardData.users.map((user) => ({
