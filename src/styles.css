@@ -1,17 +1,21 @@
 /* User Leaderboard Header */
 .user-leaderboard-header {
     font-size: 24px;
-    color: #333;
+    color: white; /* Changed to white for better contrast */
+    background-color: #007bff; /* Added background color */
     margin-bottom: 20px;
+    padding: 10px 0; /* Added padding for spacing */
     text-align: center;
 }
 
 /* User Teams Header */
 .user-teams-header {
     font-size: 20px;
-    color: #333;
+    color: white; /* Changed to white for better contrast */
+    background-color: #0056b3; /* Added background color */
     margin-top: 30px;
     margin-bottom: 15px;
+    padding: 10px 0; /* Added padding for spacing */
     text-align: center;
 }
 
@@ -26,12 +30,12 @@
 .user-leaderboard-table-container th,
 .user-leaderboard-table-container td {
     padding: 12px;
-    text-align: left;
+    text-align: center; /* Centered text */
     border-bottom: 1px solid #ccc;
 }
 
 .user-leaderboard-table-header th {
-    background-color: #007bff;
+    background-color: #007bff; /* Consistent with the header */
     color: white;
 }
 
@@ -39,26 +43,42 @@
     background-color: #f0f0f0;
 }
 
+.user-leaderboard-table-body .user-leaderboard-table-row:hover {
+    background-color: #dae5f4; /* Hover effect for rows */
+}
+
 /* General Styles for User Teams Table */
 .user-teams-table-container {
     width: 100%;
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 10px; /* Adjusted for spacing */
     margin-bottom: 20px;
 }
 
 .user-teams-table-container th,
 .user-teams-table-container td {
     padding: 12px;
-    text-align: left;
+    text-align: center; /* Centered text */
     border-bottom: 1px solid #ccc;
 }
 
 .user-teams-table-header th {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Consistent with the header */
     color: white;
 }
 
 .user-teams-table-body .user-teams-table-row:nth-child(even) {
     background-color: #e6f0ff;
 }
+
+.user-teams-table-body .user-teams-table-row:hover {
+    background-color: #dae5f4; /* Hover effect for rows */
+}
+
+/* Style for Playoff Birth Indicator */
+.x-indicator {
+    font-weight: bold;
+    color: #4CAF50; /* Green color for the 'x' indicator */
+}
+    
