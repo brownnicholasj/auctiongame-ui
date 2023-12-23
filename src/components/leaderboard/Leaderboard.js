@@ -46,22 +46,6 @@ const Leaderboard = () => {
 					className='user-leaderboard'
 				/>
 			</div>
-			{/* {leaderboardData.users.map((user) => (
-				<div key={user.id}>
-					<h2 className='user-teams-header'>{user.name}'s Teams</h2>
-					<TableContainer
-						data={user.matchedTeams}
-						headers={[
-							'Name',
-							'Wins',
-							'Losses',
-							'Division Winner',
-							'Playoff Berth',
-						]}
-						className='user-teams'
-					/>
-				</div>
-			))} */}
 		</>
 	);
 };
