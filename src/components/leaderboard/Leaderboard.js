@@ -44,7 +44,7 @@ const Leaderboard = () => {
 						matchedTeams: user.matchedTeams,
 						onClick: () => toggleTeamsVisibility(user.id),
 					}))}
-					headers={['Rank', 'Name', 'Total Score']}
+					headers={['Name', 'Total Score']}
 					className='user-leaderboard'
 				/>
 				{leaderboardData.users.map(

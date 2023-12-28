@@ -89,3 +89,21 @@ body {
         max-width: 300px;
     }
 }
+ 
+  .score-bar-container {
+    width: 100%; /* Full width of the container */
+  }
+  
+  .score-bar {
+    background-color: var(--headerBackground);
+    border: 1px solid var(--headerBackground);
+    box-shadow: 0 0 5px var(--headerBackground);
+    border-radius: 15px 15px;
+  }
+  
+.score-value {
+    color: var(--background);
+    text-shadow: 5px;
+    font-weight: bold;
+}
+  
