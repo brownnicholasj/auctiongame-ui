@@ -17,8 +17,18 @@ body {
     margin: auto;
 }
 
+.team-records-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+    top: 20px;
+}
+
 .user-leaderboard-table-container,
-.user-teams-table-container {
+.user-teams-table-container,
+.team-records-table-container {
     width: 100%; 
     max-height: 42px;
     border: 3px solid var(--headerBackground);
@@ -45,6 +55,13 @@ body {
     max-height: 42px;
 }
 
+.team-records-table-container th,
+.team-records-table-container td {
+    padding: 12px;
+    text-align: center;
+    max-height: 42px;
+}
+
 /*name*/
 .user-teams-table-container th:nth-child(1) { width: 20%; }
 /*wins*/
@@ -58,7 +75,9 @@ body {
 /*total score*/
 .user-teams-table-container th:nth-child(6) { width: 15%; }
 
-.user-leaderboard-table-header th {
+.user-leaderboard-table-header th,
+.user-teams-table-header th, 
+.team-records-table-header th {
     background-color: var(--headerBackground);
     color: var(--background);
 }
@@ -71,10 +90,7 @@ body {
     background-color: var(--rowHover);
 }
 
-.user-teams-table-header th {
-    background-color: var(--headerBackground); 
-    color: var(--background);
-}
+
 
 .user-teams-table-body .user-teams-table-row:nth-child(even) {
     background-color: var(--altRowColor);

@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import TableContainer from '../table/TableContainer';
 import { GETLEADERBOARDDATA } from '../../helpers/backEndData';
 import UserTeamsTable from './UserTeamsTable';
+import TeamRecords from './TeamRecords';
 
 const Leaderboard = () => {
 	const [leaderboardData, setLeaderboardData] = useState({ users: [] });
@@ -58,6 +59,7 @@ const Leaderboard = () => {
 						)
 				)}
 			</div>
+			<TeamRecords />
 		</>
 	);
 };
