@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { API_URL } from '../../constants';
 import TableContainer from '../table/TableContainer';
+import { GETLEADERBOARDDATA } from '../../helpers/backEndData';
 
 const Leaderboard = () => {
 	const [leaderboardData, setLeaderboardData] = useState({ users: [] });
@@ -15,16 +16,17 @@ const Leaderboard = () => {
 
 	useEffect(() => {
 		const fetchLeaderboardData = async () => {
-			try {
-				const response = await fetch(API_URL + '/getLeaderboardData');
-				if (!response.ok) {
-					throw new Error(`HTTP error! status: ${response.status}`);
-				}
-				const data = await response.json();
-				setLeaderboardData(data);
-			} catch (error) {
-				console.error('Fetching leaderboard data failed:', error);
-			}
+			// try {
+			// 	const response = await fetch(API_URL + '/getLeaderboardData');
+			// 	if (!response.ok) {
+			// 		throw new Error(`HTTP error! status: ${response.status}`);
+			// 	}
+			// 	const data = await response.json();
+			// 	setLeaderboardData(data);
+			// } catch (error) {
+			// 	console.error('Fetching leaderboard data failed:', error);
+			// }
+			setLeaderboardData(GETLEADERBOARDDATA);
 		};
 
 		fetchLeaderboardData();
@@ -32,7 +34,6 @@ const Leaderboard = () => {
 	return (
 		<>
 			<div className='user-leaderboard-container'>
-				<h1 className='user-leaderboard-header'>User Leaderboard</h1>
 				<TableContainer
 					data={leaderboardData.users.map((user) => ({
 						rank: user.rank,
