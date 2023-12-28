@@ -11,9 +11,8 @@ const getDisplayValue = (
 		const percentage = (value / maxScore) * 100;
 		return (
 			<div className='score-bar-container' style={{ width: '100%' }}>
-				<div className='score-bar' style={{ width: `${percentage}%` }}>
-					<span className='score-value'>{value}</span>
-				</div>
+				<div className='score-bar' style={{ width: `${percentage}%` }}></div>
+				<div className='score-value'>{value}</div>
 			</div>
 		);
 	}
