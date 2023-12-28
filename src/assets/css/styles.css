@@ -99,6 +99,7 @@ body {
     border: 1px solid var(--headerBackground);
     box-shadow: 0 0 5px var(--headerBackground);
     border-radius: 15px 15px;
+    animation: glow 1s infinite alternate;
   }
   
 .score-value {
@@ -107,3 +108,11 @@ body {
     font-weight: bold;
 }
   
+@keyframes glow {
+    from {
+      box-shadow: 0 0 1px -1px var(--headerBackground);
+    }
+    to {
+      box-shadow: 0 0 1px 1px var(--headerBackground);
+    }
+}
