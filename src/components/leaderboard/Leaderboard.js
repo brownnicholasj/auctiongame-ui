@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { API_URL } from '../../constants';
+// import { API_URL } from '../../constants';
 import TableContainer from '../table/TableContainer';
 import { GETLEADERBOARDDATA } from '../../helpers/backEndData';
 import UserTeamsTable from './UserTeamsTable';
