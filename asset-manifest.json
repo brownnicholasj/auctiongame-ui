@@ -1,15 +1,12 @@
 {
   "files": {
-    "main.css": "/auctiongame-ui/static/css/main.5ae39f9b.css",
-    "main.js": "/auctiongame-ui/static/js/main.2db58f4b.js",
+    "main.js": "/auctiongame-ui/static/js/main.202ac9f1.js",
     "static/js/787.a106c935.chunk.js": "/auctiongame-ui/static/js/787.a106c935.chunk.js",
     "index.html": "/auctiongame-ui/index.html",
-    "main.5ae39f9b.css.map": "/auctiongame-ui/static/css/main.5ae39f9b.css.map",
-    "main.2db58f4b.js.map": "/auctiongame-ui/static/js/main.2db58f4b.js.map",
+    "main.202ac9f1.js.map": "/auctiongame-ui/static/js/main.202ac9f1.js.map",
     "787.a106c935.chunk.js.map": "/auctiongame-ui/static/js/787.a106c935.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5ae39f9b.css",
-    "static/js/main.2db58f4b.js"
+    "static/js/main.202ac9f1.js"
   ]
 }
