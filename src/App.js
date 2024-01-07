@@ -1,8 +1,14 @@
-import './assets/css/styles.css';
+import * as React from 'react';
+import CssBaseline from '@mui/material/CssBaseline';
 import HomePage from './components/HomePage';
 
 function App() {
-	return <HomePage />;
+	return (
+		<>
+			<CssBaseline />
+			<HomePage />
+		</>
+	);
 }
 
 export default App;
