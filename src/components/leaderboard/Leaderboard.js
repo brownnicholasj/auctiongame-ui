@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { API_URL } from '../../constants';
-import TableContainer from '../table/TableContainer';
-// import { GETLEADERBOARDDATA } from '../../helpers/backEndData';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 import UserTeamsTable from './UserTeamsTable';
 import TeamRecords from './TeamRecords';
 
@@ -10,7 +15,6 @@ const Leaderboard = () => {
 	const [visibleTeams, setVisibleTeams] = useState({});
 
 	const toggleTeamsVisibility = (userId) => {
-		// Set the visibleUserId to the clicked user's ID if it's not already showing, or to null if it is (to hide it)
 		setVisibleTeams((currentVisibleTeamsUserId) =>
 			currentVisibleTeamsUserId === userId ? null : userId
 		);
@@ -31,23 +35,35 @@ const Leaderboard = () => {
 		};
 
 		fetchLeaderboardData();
-		// setLeaderboardData(GETLEADERBOARDDATA);
 	}, []);
 
 	return (
 		<>
 			<div className='user-leaderboard-container'>
-				<TableContainer
-					data={leaderboardData.users.map((user) => ({
-						rank: user.rank,
-						name: user.name,
-						totalScore: user.totalScore,
-						matchedTeams: user.matchedTeams,
-						onClick: () => toggleTeamsVisibility(user.id),
-					}))}
-					headers={['Name', 'Total Score']}
-					className='user-leaderboard'
-				/>
+				<TableContainer component={Paper}>
+					<Table sx={{ minWidth: 650 }} aria-label='leaderboard table'>
+						<TableHead>
+							<TableRow>
+								<TableCell>Rank</TableCell>
+								<TableCell>Name</TableCell>
+								<TableCell>Total Score</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{leaderboardData.users.map((user) => (
+								<TableRow
+									key={user.id}
+									sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+									onClick={() => toggleTeamsVisibility(user.id)}
+								>
+									<TableCell>{user.rank}</TableCell>
+									<TableCell>{user.name}</TableCell>
+									<TableCell>{user.totalScore}</TableCell>
+								</TableRow>
+							))}
+						</TableBody>
+					</Table>
+				</TableContainer>
 				{leaderboardData.users.map(
 					(user) =>
 						visibleTeams === user.id && (
