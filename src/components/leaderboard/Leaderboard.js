@@ -40,8 +40,11 @@ const Leaderboard = () => {
 	return (
 		<>
 			<div className='user-leaderboard-container'>
-				<TableContainer component={Paper}>
-					<Table sx={{ minWidth: 650 }} aria-label='leaderboard table'>
+				<TableContainer
+					sx={{ minWidth: 400, maxWidth: 400, marginTop: 2, marginLeft: 2 }}
+					component={Paper}
+				>
+					<Table aria-label='leaderboard table'>
 						<TableHead>
 							<TableRow>
 								<TableCell>Rank</TableCell>

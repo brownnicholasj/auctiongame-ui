@@ -13,7 +13,10 @@ const UserTeamsTable = ({ userName, matchedTeams }) => {
 		<>
 			<div key={userName} className='user-teams-container'>
 				<h2 className='user-teams-header'>{userName}'s Teams</h2>
-				<TableContainer component={Paper}>
+				<TableContainer
+					sx={{ minWidth: 400, maxWidth: 600, marginTop: 2, marginLeft: 2 }}
+					component={Paper}
+				>
 					<Table aria-label={`${userName}'s teams`}>
 						<TableHead>
 							<TableRow>
