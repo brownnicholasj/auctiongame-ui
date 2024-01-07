@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-// import { API_URL } from '../../constants';
+import { API_URL } from '../../constants';
 import TableContainer from '../table/TableContainer';
-import { GETLEADERBOARDDATA } from '../../helpers/backEndData';
+// import { GETLEADERBOARDDATA } from '../../helpers/backEndData';
 import UserTeamsTable from './UserTeamsTable';
 import TeamRecords from './TeamRecords';
 
@@ -17,21 +17,21 @@ const Leaderboard = () => {
 	};
 
 	useEffect(() => {
-		// const fetchLeaderboardData = async () => {
-		// try {
-		// 	const response = await fetch(API_URL + '/getLeaderboardData');
-		// 	if (!response.ok) {
-		// 		throw new Error(`HTTP error! status: ${response.status}`);
-		// 	}
-		// 	const data = await response.json();
-		// 	setLeaderboardData(data);
-		// } catch (error) {
-		// 	console.error('Fetching leaderboard data failed:', error);
-		// }
-		// };
+		const fetchLeaderboardData = async () => {
+			try {
+				const response = await fetch(API_URL + '/getLeaderboardData');
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				const data = await response.json();
+				setLeaderboardData(data);
+			} catch (error) {
+				console.error('Fetching leaderboard data failed:', error);
+			}
+		};
 
-		// fetchLeaderboardData();
-		setLeaderboardData(GETLEADERBOARDDATA);
+		fetchLeaderboardData();
+		// setLeaderboardData(GETLEADERBOARDDATA);
 	}, []);
 
 	return (

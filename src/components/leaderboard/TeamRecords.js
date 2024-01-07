@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GETSEASONDATA } from '../../helpers/backEndData';
+import { API_URL } from '../../constants';
 import TableContainer from '../table/TableContainer';
 import {
 	sortTeamsByConference,
@@ -10,16 +10,28 @@ const TeamRecords = () => {
 	const [recordData, setRecordData] = useState({ teams: [] });
 
 	useEffect(() => {
-		const sortedTeams = sortTeamsByConference(GETSEASONDATA.teams);
-		setRecordData({ teams: sortedTeams });
-	}, []);
+		const fetchTeamRecordData = async () => {
+			try {
+				const response = await fetch(API_URL + '/getAllSeasonData');
+				if (!response.ok) {
+					throw new Error(`HTTP error! status: ${response.status}`);
+				}
+				const data = await response.json();
+				const sortedTeams = sortTeamsByConference(data.teams);
+				const groupedTeams = groupTeamsByConferenceAndDivision(sortedTeams);
+				setRecordData({ teams: groupedTeams });
+			} catch (error) {
+				console.error('Fetching teamRecords data failed:', error);
+			}
+		};
 
-	const groupedData = groupTeamsByConferenceAndDivision(recordData.teams);
+		fetchTeamRecordData();
+	}, []);
 
 	return (
 		<>
 			<div className='team-records-container'>
-				{Object.entries(groupedData).map(([group, teams]) => (
+				{Object.entries(recordData.teams).map(([group, teams]) => (
 					<div key={group}>
 						<TableContainer
 							data={teams.map(({ name, wins, losses, playoffBerth }) => ({
