@@ -65,7 +65,7 @@ const TeamRecords = () => {
 												playoffBerth,
 												divisionWinner,
 											}) => (
-												<TableRow key={name}>
+												<TableRow key={name} sx={{ height: '62px' }}>
 													<TableCell component='th' scope='row'>
 														{name}
 													</TableCell>
