@@ -1,2 +1,2 @@
-export const API_URL = 'http://localhost:8080';
-// 'https://auctiongame.onrender.com';
+export const API_URL = 'https://auctiongame.onrender.com';
+// 'http://localhost:8080';
